@@ -87,7 +87,7 @@ set( with-examples "yes" CACHE BOOL "Compile with examples." )
 
 # Implement -Dwith-icu and define BOOST_HAS_ICU and output ${icu}.
 #------------------------------------------------------------------------------
-set( with-icu "no" CACHE BOOL "Compile with International Components for Unicode." )
+set( with-icu "yes" CACHE BOOL "Compile with International Components for Unicode." )
 
 if (with-icu)
     add_definitions( -DBOOST_HAS_ICU )
