@@ -271,6 +271,7 @@ if (BUILD_SHARED_LIBS)
     link_libraries( 
         "-fstack-protector"
         "-fstack-protector-all"
+        ${icu_i18n_LIBRARIES}
         ${Boost_CHRONO_LIBRARY}
         ${Boost_DATE_TIME_LIBRARY}
         ${Boost_FILESYSTEM_LIBRARY}
@@ -283,7 +284,6 @@ if (BUILD_SHARED_LIBS)
         ${Boost_THREAD_LIBRARY}
         ${pthread_LIBRARIES}
         ${rt_LIBRARIES}
-        ${icu_i18n_LIBRARIES}
         ${dl_LIBRARIES}
         ${png_LIBRARIES}
         ${qrencode_LIBRARIES}
@@ -292,6 +292,7 @@ else()
     link_libraries( 
         "-fstack-protector"
         "-fstack-protector-all"
+        ${icu_i18n_STATIC_LIBRARIES}
         ${Boost_CHRONO_LIBRARY}
         ${Boost_DATE_TIME_LIBRARY}
         ${Boost_FILESYSTEM_LIBRARY}
@@ -304,7 +305,6 @@ else()
         ${Boost_THREAD_LIBRARY}
         ${pthread_LIBRARIES}
         ${rt_LIBRARIES}
-        ${icu_i18n_STATIC_LIBRARIES}
         ${dl_LIBRARIES}
         ${png_STATIC_LIBRARIES}
         ${qrencode_STATIC_LIBRARIES}
@@ -548,6 +548,7 @@ target_include_directories( ${CANONICAL_LIB_NAME} PUBLIC
 #------------------------------------------------------------------------------
 if (BUILD_SHARED_LIBS)
     target_link_libraries( ${CANONICAL_LIB_NAME}
+        ${icu_i18n_LIBRARIES}
         ${Boost_CHRONO_LIBRARY}
         ${Boost_DATE_TIME_LIBRARY}
         ${Boost_FILESYSTEM_LIBRARY}
@@ -560,13 +561,13 @@ if (BUILD_SHARED_LIBS)
         ${Boost_THREAD_LIBRARY}
         ${pthread_LIBRARIES}
         ${rt_LIBRARIES}
-        ${icu_i18n_LIBRARIES}
         ${dl_LIBRARIES}
         ${png_LIBRARIES}
         ${qrencode_LIBRARIES}
         ${secp256k1_LIBRARIES} )
 else()
     target_link_libraries( ${CANONICAL_LIB_NAME}
+        ${icu_i18n_STATIC_LIBRARIES}
         ${Boost_CHRONO_LIBRARY}
         ${Boost_DATE_TIME_LIBRARY}
         ${Boost_FILESYSTEM_LIBRARY}
@@ -579,7 +580,6 @@ else()
         ${Boost_THREAD_LIBRARY}
         ${pthread_LIBRARIES}
         ${rt_LIBRARIES}
-        ${icu_i18n_STATIC_LIBRARIES}
         ${dl_LIBRARIES}
         ${png_STATIC_LIBRARIES}
         ${qrencode_STATIC_LIBRARIES}
